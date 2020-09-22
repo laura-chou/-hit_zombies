@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/request.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="container" class="flex">
+        <div class="request flex">
+            <div class="col"></div>
+            <div class="col col2">
+                <div style="width: 100%;"><input type="text" id="text" placeholder="請輸入名字" maxlength="10"></div>
+                <div style="width: 100%; margin-top: 5%;">
+                    <img src="../images/no.png" id="no">
+                    <img src="../images/yes.png" id="yes">
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        // 禁止回上一頁
+        window.history.forward(1);
+        const name = document.getElementById('text');
+        const yes = document.getElementById('yes');
+        const no = document.getElementById('no');
+
+        let info = { name: '', attack: 10, life: 100, time: 10, level: 1 }
+
+        yes.onclick = () => {
+            if (name.value != null && name.value.trim() != '') {
+                info.name = name.value
+                sessionStorage.setItem('info', JSON.stringify(info))
+                window.location.href = 'explanation.html'
+            } else {
+                alert('請輸入名字')
+            }
+        }
+        no.onclick = () => {
+            window.location.href = 'start.html'
+        }
+
+
+    </script>
+</body>
+
+</html>

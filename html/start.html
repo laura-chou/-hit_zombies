@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- 開始頁面 -->
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/start.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="start">
+        <img src="../images/start.jpg" style="width: 100%;">
+        <img src="../images/title.png" style="width: 100%;" class="img">
+        <input type="button" id="btn" value="Start"></input>
+    </div>
+
+    <script>
+        const btn = document.getElementById('btn')
+        btn.onclick = () => {
+            btn.style.animation="opacity 1s ease"
+            const play = new Audio()
+            play.src = '../music/click.mp3'
+            play.play()
+            setTimeout(() => {
+                window.location.href = 'playerimg.html'
+            },600)
+            
+        }
+
+    </script>
+</body>
+
+</html>
